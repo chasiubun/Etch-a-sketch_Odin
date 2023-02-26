@@ -1,0 +1,44 @@
+.page{
+    display: grid;
+    grid-template: 10vh 80vh 10vh/ 1fr 4fr;
+    grid-template-areas: 
+    "header header" 
+    "sidebar container"
+    "footer footer";
+}.header{
+    background-color: rgb(103, 87, 103);
+    color: white;
+    font-size: x-large;
+    text-align: center;
+    grid-area: header;
+}
+.sidebar{
+    background-color: aquamarine;
+    grid-area: sidebar;
+}
+.button{
+border-color: black;
+}
+.container{
+    background-color: antiquewhite;
+    grid-area: container;
+}
+.footer{
+    background-color: cadetblue;
+    grid-area: footer;
+}
+.drawingBoard{
+    background-color: rgb(247, 24, 24);
+    max-height: 400px;
+    max-width: 400px;
+    display: flex;
+    padding: 1px;
+    border: 1px black;
+}
+.panel{
+    height: 50px;
+    width: 50px;
+    background-color: gray;
+    padding: 1px;
+    border-color: 5px aliceblue;
+}
