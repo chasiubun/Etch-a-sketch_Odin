@@ -29,15 +29,14 @@ border-color: black;
 }
 .drawingBoard{
     background-color: #f71818;
-    height: 75vh;
-    width: 75vh;
-    display: flex; /*allows divs to stretch across the board*/
-    flex-direction: column; /*directs the boxes to move laterally*/
+    height: 400px;
+    width: 400px;
+    display: grid;
+
     
 }
 .panel{
     background-color: blue;
     display: flex;
-    flex: 1; /* 1 1 0; crates a square since the container is a square*/
 
 }
