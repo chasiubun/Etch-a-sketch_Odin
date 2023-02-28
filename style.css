@@ -28,17 +28,22 @@ border-color: black;
     grid-area: footer;
 }
 .drawingBoard{
-    background-color: rgb(247, 24, 24);
-    max-height: 400px;
-    max-width: 400px;
-    display: flex;
-    padding: 1px;
-    border: 1px black;
+    background-color: #f71818;
+    height: 75vh;
+    width: 75vh;
+    display: flex; /*allows divs to stretch across the board*/
+    flex-direction: column; /*directs the boxes to move laterally*/
+    
 }
 .panel{
-    height: 50px;
-    width: 50px;
-    background-color: gray;
-    padding: 1px;
-    border-color: 5px aliceblue;
+    background-color: blue;
+    display: flex;
+    flex: 1; /* 1 1 0; crates a square since the container is a square*/
+
+}
+.kpanel{
+    background-color: rgb(35, 197, 84);
+    display: flex;
+    flex: 1; /* 1 1 0; crates a square since the container is a square*/
+
 }

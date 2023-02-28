@@ -14,8 +14,12 @@ function createPanel(n){
     for (i = 0; i < n; i++){
         let column = document.createElement("div");
         column.classList.add("panel");
-        column.style.border = "1px solid black"
         board.appendChild(column);
+        // column.addEventListener("mouseover", () => 
+        // {console.log("hovering..."); 
+        //     console.log(column);
+        //     column.style.color = "red"}
+        // ); 
         for (j = 0; j < n; j++){
             let row = document.createElement("div");
             row.classList.add("panel");
@@ -26,8 +30,20 @@ function createPanel(n){
 }
 
 
-createPanel(3)
+createPanel(4)
 
-const drawing = document.querySelectorAll(".panel");
+// const panel = board.querySelector("div")
+// const subPanel = panel.querySelectorAll("div")
+// //subPanel.forEach((div) =>div.remove());
 
-drawing.addEventListener('click', () =>{alert("hi")})
+// // subPanel.addEventListener(
+// //     "mouseover", () => console.log("hovering...")
+// // )
+
+// panel.addEventListener(
+//     "mouseover", () =>{
+//     console.log(panel)
+//     console.log("hover works");
+//     //subPanel.style.backgroundColor = "green"
+// }
+// )
