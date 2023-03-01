@@ -32,6 +32,8 @@ border-color: black;
     height: 400px;
     width: 400px;
     display: grid;
-
-    
+    border: 1px solid grey;
 }
+
+
+

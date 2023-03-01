@@ -40,10 +40,10 @@ createPanel(4)
 // //     "mouseover", () => console.log("hovering...")
 // // )
 
-// panel.addEventListener(
-//     "mouseover", () =>{
-//     console.log(panel)
-//     console.log("hover works");
-//     //subPanel.style.backgroundColor = "green"
-// }
-// )
+panel.addEventListener(
+    "mouseover", () =>{
+    console.log(panel)
+    console.log("hover works");
+    //subPanel.style.backgroundColor = "green"
+}
+)

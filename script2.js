@@ -1,41 +1,43 @@
+//Etch-a-Sketch:
+//Implement coloring options to the board when hovering the mouse over individual panels.
+//Allow color options by providing functions to buttons to switch colors
+
+
+//const input = document.getElementById("sizeInput");
+const inputValue = document.getElementById("sizeInput").value; //default 16
+//input.addEventListener("click", () => console.log(inputValue));
+const blackButton = document.getElementById("blackButton")
+const redButton = document.getElementById("redButton")
+const eraserButton = document.getElementById("eraserButton")
+let color = "black"; //default color
+//Button Functions
+blackButton.addEventListener("click", function(e){color = blackButton.value}); //this works
+redButton.addEventListener("click", function(e){color = redButton.value});eraserButton.addEventListener("click", function(e){color = eraserButton.value});
+
+
 //Board creation:
-//Grab the Board with a grid and divide the grid into equal parts of columns and rows
+boardSize(inputValue) //default board creation
 
-let input = document.getElementById("sizeInput").value;
-console.log(input)
 
-boardSize(input)
-
-let submitButton = document.getElementById("submit");
-console.log(submitButton);
-submitButton.addEventListener("click", () => console.log(input))
-
-function boardSize(input){
-    createBoard(input);
+function boardSize(inputValue){
+    createBoard(inputValue);
 }
 function createBoard(size){
     const board = document.querySelector(".drawingBoard"); 
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateRows =`repeat(${size}, 1fr)`;
-
-//Fill the grid with div elements with a blue background
-for (let i = 0; i < (size*size); i++) {
-    let panel = document.createElement('div');
-    panel.classList.add("panel");
-    panel.style.border = "1px solid black";
-    panel.addEventListener("mouseover", () =>  panel.style.backgroundColor = "red");
-    board.insertAdjacentElement("beforeend", panel); //insert a displayable panel next to the following element, populating starting from the end
-    }
+    //Grab the Board with a grid and divide the grid into equal parts of columns and rows
+    for (let i = 0; i < (size*size); i++) {
+        let panel = document.createElement('div');
+        panel.classList.add("panel");
+        //panel.style.border = "1px solid black";
+        panel.addEventListener("mouseover", () =>  panel.style.backgroundColor = `${color}`);
+        board.insertAdjacentElement("beforeend", panel); //insert a displayable panel next to the following element, populating starting from the end
+        }
 }
 
 
-//function panelStyle() {
-    //panel.style.backgroundColor = "gray";}
 
-
-// function panelFunctions(){
-//     panel.addEventListener("mouseover", () =>  
-//     panel.style.backgroundColor = "red")
-//     //console.log("hovering..."))
-// } 
-// console.log(panel)
+//1. add a general border via CSS
+//2. clear colors when changing size
+//3. add color to buttons
