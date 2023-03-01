@@ -2,26 +2,29 @@
 //Implement coloring options to the board when hovering the mouse over individual panels.
 //Allow color options by providing functions to buttons to switch colors
 
-
+//SIDEBAR VARIABLES
 //const input = document.getElementById("sizeInput");
 const inputValue = document.getElementById("sizeInput").value; //default 16
 //input.addEventListener("click", () => console.log(inputValue));
 const blackButton = document.getElementById("blackButton")
 const redButton = document.getElementById("redButton")
 const eraserButton = document.getElementById("eraserButton")
-let color = "black"; //default color
-//Button Functions
+const clear = document.getElementById("clear")
+//BUTTON FUNCTIONS
 blackButton.addEventListener("click", function(e){color = blackButton.value}); //this works
 redButton.addEventListener("click", function(e){color = redButton.value});eraserButton.addEventListener("click", function(e){color = eraserButton.value});
 
 
+
 //Board creation:
 boardSize(inputValue) //default board creation
+let color = "black"; //default color
 
 
 function boardSize(inputValue){
     createBoard(inputValue);
 }
+
 function createBoard(size){
     const board = document.querySelector(".drawingBoard"); 
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
@@ -33,7 +36,9 @@ function createBoard(size){
         //panel.style.border = "1px solid black";
         panel.addEventListener("mouseover", () =>  panel.style.backgroundColor = `${color}`);
         board.insertAdjacentElement("beforeend", panel); //insert a displayable panel next to the following element, populating starting from the end
+        clear.addEventListener("click", () => panel.foreach(panel.style.backgroundColor = "#f6eeee")) //Allows erasing
         }
+
 }
 
 
